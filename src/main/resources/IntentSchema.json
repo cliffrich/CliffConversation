@@ -1,0 +1,19 @@
+{
+  "intents": [
+    {
+      "intent": "AboutTheGuest",
+      "slots":[
+	      {
+	      	"name":"guest",
+	      	"type":"AMAZON.GB_FIRST_NAME"
+	      }
+      ]
+    },
+    {
+      "intent": "AMAZON.StopIntent"
+    },
+    {
+      "intent": "AMAZON.CancelIntent"
+    }
+  ]
+}
