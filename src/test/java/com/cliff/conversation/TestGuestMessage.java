@@ -1,9 +1,7 @@
 package com.cliff.conversation;
 
 import static org.junit.Assert.assertNotNull;
-
 import org.junit.Test;
-
 import com.cliff.guest.GuestMessage;
 
 public class TestGuestMessage {

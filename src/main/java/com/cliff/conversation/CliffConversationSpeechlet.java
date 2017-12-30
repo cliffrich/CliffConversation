@@ -17,24 +17,19 @@ import com.cliff.guest.GuestMessage;
 public class CliffConversationSpeechlet implements Speechlet {
     private static final Logger log = LoggerFactory.getLogger(CliffConversationSpeechlet.class);
     private static final String ABOUT_THE_GUEST = "AboutTheGuest";
+    
     @Override
-    public void onSessionStarted(final SessionStartedRequest request, final Session session)
-            throws SpeechletException {
-        log.info("onSessionStarted requestId={}, sessionId={}", request.getRequestId(),
-                session.getSessionId());
+    public void onSessionStarted(final SessionStartedRequest request, final Session session) throws SpeechletException {
         // any initialization logic goes here
     }
 
     @Override
     public SpeechletResponse onLaunch(final LaunchRequest request, final Session session) throws SpeechletException {
-        log.info("onLaunch requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
         return getWelcomeResponse();
     }
 
     @Override
     public SpeechletResponse onIntent(final IntentRequest request, final Session session) throws SpeechletException {
-        log.info("onIntent requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
-
         Intent intent = request.getIntent();
         String intentName = (intent != null) ? intent.getName() : null;
 
@@ -48,7 +43,6 @@ public class CliffConversationSpeechlet implements Speechlet {
 
     @Override
     public void onSessionEnded(final SessionEndedRequest request, final Session session) throws SpeechletException {
-        log.info("onSessionEnded requestId={}, sessionId={}", request.getRequestId(), session.getSessionId());
         // any cleanup logic goes here
     }
 
@@ -61,8 +55,10 @@ public class CliffConversationSpeechlet implements Speechlet {
     private SpeechletResponse aboutTheGuestResponse(Intent intent) {
     	String speechText = "welcome mate";
     	Slot slotGuest = intent.getSlot("guest");
+    	log.debug("Intent '{}' and slot '{}'", intent.getName(), slotGuest.getValue());
+
     	if(slotGuest != null)
     		speechText = GuestMessage.aboutTheGuest(slotGuest.getValue());
-        return ConversationResponseBuilder.builder().withSpeechText(speechText).get();
+    	return ConversationResponseBuilder.builder().withSpeechText(speechText).get();
     }
 }

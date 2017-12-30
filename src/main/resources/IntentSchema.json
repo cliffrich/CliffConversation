@@ -1,19 +1,34 @@
 {
   "intents": [
     {
-      "intent": "AboutTheGuest",
-      "slots":[
-	      {
-	      	"name":"guest",
-	      	"type":"AMAZON.GB_FIRST_NAME"
-	      }
-      ]
+      "slots": [
+        {
+          "name": "guest",
+          "type": "AMAZON.GB_FIRST_NAME"
+        }
+      ],
+      "intent": "AboutTheGuest"
+    },
+    {
+      "slots": [
+        {
+          "name": "station",
+          "type": "AMAZON.GB_FIRST_NAME"
+        }
+      ],
+      "intent": "PlayMusic"
     },
     {
       "intent": "AMAZON.StopIntent"
     },
     {
       "intent": "AMAZON.CancelIntent"
+    },
+    {
+      "intent": "AMAZON.ResumeIntent"
+    },
+    {
+      "intent": "AMAZON.PauseIntent"
     }
   ]
 }

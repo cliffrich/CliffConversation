@@ -16,6 +16,7 @@ public class CliffConversationHandler extends SpeechletRequestStreamHandler {
     }
 
     public CliffConversationHandler() {
-		super(new CliffConversationSpeechlet(), supportedApplicationIds);
+//		super(new CliffConversationSpeechlet(), supportedApplicationIds);
+		super(new CliffMusicPlayerSpeechlet(), supportedApplicationIds);
 	}
 }

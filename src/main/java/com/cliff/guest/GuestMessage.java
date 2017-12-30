@@ -1,20 +1,30 @@
 package com.cliff.guest;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import java.util.HashMap;
+import java.util.Map;
 
 public class GuestMessage {
-    private static final Logger logger = LogManager.getLogger(GuestMessage.class);
+	private static final Map<String, String> guestsAndKey = new HashMap<>();
+	private static final Map<String, String> guestInfo = new HashMap<>();
+	public static final String REPROMPT ="reprompt";
 
+	static {
+		guestsAndKey.put("cheryl", "sheryl");
+		guestsAndKey.put("sheryl", "sheryl");
+		guestsAndKey.put("bubble", "sheryl");
+		guestsAndKey.put("ruby", "ruby");
+		guestsAndKey.put("rooby", "ruby");
+		guestsAndKey.put("daniel", "daniel");
+		//
+		guestInfo.put("sheryl", "sheryl Have you done anything useful today");
+		guestInfo.put("ruby", "Hi ruby Have I got something to eat");
+		guestInfo.put("daniel", "welcome daniel Have you cleaned your ears");
+    }
+	
 	public static String aboutTheGuest(String guestName) {
-		logger.debug("Processing GuestMessage for {}", guestName);
-		if(guestName.contains("sheryl"))
-			return "welcome sheryl Have you done anything useful today";
-		else if(guestName.contains("daniel"))
-			return "welcome daniel Have you cleaned your ears";
-		else if(guestName.contains("ruby"))
-			return "welcome ruby Have I got something to eat";
-		return "welcome rubbish " + guestName;
+		if(guestsAndKey.get(guestName) == null)
+			return "reprompt";
+		return guestInfo.get(guestsAndKey.get(guestName));
 	}
 
 }

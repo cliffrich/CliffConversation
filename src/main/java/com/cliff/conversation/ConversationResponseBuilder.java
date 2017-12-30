@@ -5,9 +5,12 @@ import com.amazon.speech.speechlet.SpeechletResponse;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
+import com.cliff.guest.GuestMessage;
 
 public class ConversationResponseBuilder implements Supplier<SpeechletResponse>{
 	private String speechText, repromptText; 
+	
+	private static final String REPROMPT_MESSAGE = "I didn't recognise the name you mentioned. please can you say again?";
 	
 	public static ConversationResponseBuilder builder(){
         return new ConversationResponseBuilder();
@@ -34,6 +37,8 @@ public class ConversationResponseBuilder implements Supplier<SpeechletResponse>{
 	
 	public ConversationResponseBuilder withSpeechText(String speechText) {
 		this.speechText = speechText;
+		if(speechText.equals(GuestMessage.REPROMPT))
+			this.repromptText = REPROMPT_MESSAGE;
 		return this;
 	}
 	
