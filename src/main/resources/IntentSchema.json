@@ -19,6 +19,18 @@
       "intent": "PlayMusic"
     },
     {
+      "intent":"GuestInfo"
+    },
+    {
+      "slots": [
+        {
+          "name": "file",
+          "type": "AMAZON.NUMBER"
+        }
+      ],
+      "intent":"ReadFlash"
+    },
+    {
       "intent": "AMAZON.StopIntent"
     },
     {

@@ -1,2 +1,5 @@
 AboutTheGuest what do you know about {guest}
+GuestInfo for wifi
+GuestInfo for wifi password
 PlayMusic to play {station} music
+ReadFlash to read {file}
