@@ -1,0 +1,52 @@
+[
+    {
+       "no": "1",
+        "q": "Describe the global pattern of urban change",
+        "a": "In 1950, 30 percent of the worlds population was urban and then, by 2014, 54 percent of the worlds population was urban"
+	},
+	{
+	   "no": "2",
+        "q": "What are urban trends in different parts of the world?",
+        "a": "H I Cs such as USA, Japan and Australia = 75 percent or more in urban areas. North America is most urbanised with 82 percent. Urbanisation in Europe is slowing down due to counter urbanisation. L I Cs such as Africa and Asia are more rural. Africa = 40 percent urban. Asia = 52 percent urban. But these areas are experiencing the fastest rates of urbanisation"
+	},
+	{
+	   "no": "3",
+        "q": "What are the two factors affecting the rate of urbanisation?",
+        "a": "Migration, internal and external, push and pull factors. Natural increase"
+	},
+	{
+	   "no": "4",
+        "q": "What are mega cities?",
+        "a": "Cities with a population over 10 million. 2015 = 28 mega cities. By 2030, there will be above 40 mega cities. Tokyo = largest city with a population of 38 million. Delhi is the second largest city with a population of 25 million"
+	},
+	{
+	   "no": "5",
+        "q": "How is the UKs population distributed?",
+        "a": "Average population density = 260 people / sq km. London = 5000 people /sq km. Northern Scotland = 10 people / sq km. Highest population density is in south and east england. For example, London and Manchester. Lowest density is in north and west of the UK"
+	},
+	{
+	   "no": "6",
+        "q": "Where are the UKs cities located?",
+        "a": "Cities are evenly spread in south England but clustered in the north. This reflects the concentration of heavy industry and manufacturing in the past. So, cities in the south have responded to a growing service sector and between 2004 and 2013, a million people have migrated to london. In the north of england, there is a slow increase in population to adjust to the post heavy industrial economy"
+	},
+	{
+	   "no": "7",
+        "q": "What are the features of sustainable urban living?",
+        "a": "Conserving water and energy, recycling waste, creating green space and urban transport strategies"
+	},
+	{
+	   "no": "8",
+        "q": "Describe water and energy conservation in Frieburg, Germany",
+		"a": "Grey water. Financial incentives. Solar panels. For example, solar business parks. City aims to be 100 percent powered by renewable energy by 2050"
+	},
+	{
+	   "no": "9",
+        "q": "Describe waste recycling in Frieburg, Germany",
+        "a": "Burning waste = energy for 28,000 homes. 90 percent of packaging waste is recycled. 350 collection points for recycling. Financial rewards for people who compost green waste"
+	},
+	{
+	   "no": "10",
+        "q": "Describe creating green spaces in Frieburg, Germany",
+        "a": "District of Vauban has been redeveloped to include green spaces between houses. 40 percent of the city is forested. Native trees planted in 600 hectares of public parks. Floodplain of river Dreisam is kept free from development"
+	}
+]

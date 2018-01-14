@@ -1,0 +1,27 @@
+[
+    {
+       "no": "1",
+        "q": "area of trapezium",
+        "a": "one by two times a plus b times h"
+    },
+    {
+       "no": "2",
+        "q": "volume of prism",
+        "a": "area of cross section multiplied by length"
+    },
+    {
+       "no": "3",
+        "q": "volume of sphere",
+        "a": "four by three times pi r cube"
+    },
+    {
+       "no": "4",
+        "q": "surface area of sphere",
+        "a": "four pi r square"
+    },
+    {
+       "no": "5",
+        "q": "volume of cone",
+        "a": "one by three pi r square h"
+    }
+]

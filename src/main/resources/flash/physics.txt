@@ -1,0 +1,108 @@
+[
+    {
+       "no": "1",
+        "q": "Charge equals",
+        "a": "current multiplied by time. In other words, Q = I multiplied by T"
+    },
+    {
+       "no": "2",
+        "q": "Potential difference equals",
+        "a": "current multiplied by resistance. In other words, V = I multiplied by R"
+    },
+    {
+       "no": "3",
+        "q": "Electrical power equals",
+        "a": "current multiplied by potential difference. In other words, P = I multiplied by V"
+    },
+    {
+       "no": "4",
+        "q": "Energy transferred equals",
+        "a": "current multiplied by potential difference by time. In other words, E = I multiplied by V multiplied by t"
+    },
+    {
+       "no": "5",
+        "q": "Speed equals",
+        "a": "distance divided by time"
+    },
+    {
+       "no": "6",
+        "q": "Acceleration equals",
+        "a": "Change in velocity divided by time taken. In other words, a = v minus u divided by t"
+    },
+    {
+       "no": "7",
+        "q": "Force equals",
+        "a": "mass multiplied by acceleration. In other words, f = m multiplied by a"
+    },
+    {
+       "no": "8",
+        "q": "weight equals",
+        "a": "mass multiplied by gravitational field strength. In other words, w = m multiplied by g"
+    },
+    {
+       "no": "9",
+        "q": "momentum equals",
+        "a": "mass multiplied by velocity. In other words, p = m multiplied by v"
+    },
+    {
+       "no": "10",
+        "q": "force equals",
+        "a": "change in momentum divided by time. In other words, f = m multiplied by v minus m multiplied by u divided by t"
+    },
+    {
+       "no": "11",
+        "q": "work done equals",
+        "a": "force multiplied by distance moved in the direction of the force. In other words, e = f multiplied by d"
+    },
+    {
+       "no": "12",
+        "q": "power equals",
+        "a": "work done divided by time taken. In other words, p = e divided by t"
+    },
+    {
+       "no": "13",
+        "q": "gravitational potential energy equals",
+        "a": "mass multiplied by gravitational field strength multiplied by vertical height. In other words, GPE = m multiplied by g multiplied by h"
+    },
+    {
+       "no": "14",
+        "q": "kinetic energy equals",
+        "a": "half the mass multiplied by velocity square. In other words, KE = one divided by two multiplied by m multiplied by v square"
+    },
+    {
+       "no": "15",
+        "q": "Wave speed equals",
+        "a": "frequency multiplied by wavelength. In other words, v = f multiplied by lambda"
+    },
+    {
+       "no": "16",
+        "q": "Wave speed also equals",
+        "a": "distance divided by time. In other words, v = x divided by t"
+    },
+    {
+       "no": "17",
+        "q": "Once again I repeat, electrical power equals",
+        "a": "current multiplied by potential difference. In other words, P = I multiplied by v"
+    },
+    {
+       "no": "18",
+        "q": "cost of electricity equals",
+        "a": "Power multiplied by time multiplied by cost of 1 kilowatt hour"
+    },
+    {
+       "no": "19",
+        "q": "You can also say, power equals",
+        "a": "energy used divided by time taken. In other words, P = e divided by t"
+    },
+    {
+       "no": "20",
+        "q": "efficiency equals",
+        "a": "useful energy transferred by the device divided by total energy supplied to the device multiplied by 100 percentage"
+    },
+    {
+       "no": "21",
+        "q": "primary voltage divided by secondary voltage equals",
+        "a": "number of turns on primary coil divided by number of turns on secondary coil. In other words, Vp divided by Vs = Np divided by Ns"
+    }
+    
+]

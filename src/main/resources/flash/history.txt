@@ -1,0 +1,53 @@
+[
+    {
+       "no": "1",
+        "q": "In November 1918",
+        "a": "Kaiser William two abdicates"
+    },
+    {
+       "no": "2",
+        "q": "In January 1919",
+        "a": "Sparlacist uprising"
+    },
+    {
+       "no": "3",
+        "q": "In Jun2 1919",
+        "a": "Signing of the treaty of versailles"
+    },
+    {
+       "no": "4",
+        "q": "In August 1919",
+        "a": "Weimar constitution finalised"
+    },
+    {
+       "no": "5",
+        "q": "In September 1919",
+        "a": "Hitler joins German Workers party"
+    },
+    {
+       "no": "6",
+        "q": "In 1920",
+        "a": "In Kapp Putsch, Nazi party was setup"
+    },
+    {
+       "no": "7",
+        "q": "In 1921",
+        "a": "SA introduced"
+    },
+    {
+       "no": "8",
+        "q": "In 1923",
+        "a": "Hyper inflation and French occupation of Ruhr Munich Putsch"
+    },
+    {
+       "no": "9",
+        "q": "In 1924",
+        "a": "Dawes plan"
+    },
+    {
+       "no": "10",
+        "q": "In 1925",
+        "a": "Locumo pact and also, Mein kampf published"
+    }
+    
+]
