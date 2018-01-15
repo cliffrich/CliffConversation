@@ -45,7 +45,6 @@ public class CliffConversationSpeechlet implements AudioPlayer, SpeechletV2{
         	return FlashMessageHandler.readFromFile(requestEnvelope);
         else if(CONVERSE.equals(intentName))
         	return ReadDialogHandler.readFromFile(requestEnvelope);
-//        	return FlashMessageHandler.doDialogResponse(requestEnvelope);
         return null;
 	}
 
