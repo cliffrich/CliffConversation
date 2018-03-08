@@ -1,5 +1,7 @@
 package com.cliff.conversation;
 
+import static org.junit.Assert.assertNotNull;
+
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -18,13 +20,13 @@ public class TryFlashReader {
 	   public void testFlashContent() {
 			String flashContent = FlashReader.getFileConents("flash.txt", 0, 0);
 			System.out.println(flashContent);
-//			assertNotNull(response);
+			assertNotNull(flashContent);
 	   }
 	   @Test
 	   public void testFileName() {
 			String fileName = FlashReader.getFilename("flash");
 			System.out.println(fileName);
-//			assertNotNull(response);
+			assertNotNull(fileName);
 	   }
 	   
 	   @Test

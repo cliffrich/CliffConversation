@@ -3,6 +3,7 @@ package com.cliff.util;
 import java.util.Optional;
 import java.util.function.Supplier;
 import com.amazon.speech.speechlet.SpeechletResponse;
+import com.amazon.speech.ui.OutputSpeech;
 import com.amazon.speech.ui.PlainTextOutputSpeech;
 import com.amazon.speech.ui.Reprompt;
 import com.amazon.speech.ui.SimpleCard;
@@ -32,26 +33,33 @@ public class ConversationResponseBuilder implements Supplier<SpeechletResponse>{
         // Create the plain text output.
         PlainTextOutputSpeech outputSpeech = new PlainTextOutputSpeech();
     	outputSpeech.setText(speechText.get());
-        if (repromptText != null) {
-            PlainTextOutputSpeech repromptSpeech = new PlainTextOutputSpeech();
-            repromptSpeech.setText(repromptText.get());
-            Reprompt reprompt = new Reprompt();
-            reprompt.setOutputSpeech(repromptSpeech);
-            return SpeechletResponse.newAskResponse(outputSpeech, reprompt, card);
-        } else {
-            return SpeechletResponse.newTellResponse(outputSpeech, card);
-        }
+        if (repromptText.isPresent()) {
+            return processReprompt(outputSpeech);
+        } 
+        return SpeechletResponse.newTellResponse(outputSpeech, card);
 	}
 	
 	private SpeechletResponse getSsmlSpeech() {
         SsmlOutputSpeech outputSpeech = new SsmlOutputSpeech();
     	outputSpeech.setSsml(ssmlText.get());
+    	if (repromptText.isPresent()) {
+            return processReprompt(outputSpeech);
+        } 
     	return SpeechletResponse.newTellResponse(outputSpeech);
 	}
+	
+	private SpeechletResponse processReprompt(OutputSpeech outputSpeech) {
+        PlainTextOutputSpeech repromptSpeech = new PlainTextOutputSpeech();
+        repromptSpeech.setText(repromptText.get());
+        Reprompt reprompt = new Reprompt();
+        reprompt.setOutputSpeech(repromptSpeech);
+        return SpeechletResponse.newAskResponse(outputSpeech, reprompt);
+	}
+	
 	public ConversationResponseBuilder withSpeechText(Optional<String> speechText) {
 		this.speechText = speechText;
-		if(speechText.equals(GuestMessage.REPROMPT))
-			this.repromptText = Optional.of(REPROMPT_MESSAGE);
+		if(speechText.get().startsWith(GuestMessage.REPROMPT)) 
+			this.repromptText = Optional.of("I didn't recognise the name "+speechText.get().substring(GuestMessage.REPROMPT.length(), speechText.get().length())+" from my guest list. please can you say again?");
 		return this;
 	}
 	

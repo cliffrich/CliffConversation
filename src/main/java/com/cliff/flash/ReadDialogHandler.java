@@ -21,6 +21,9 @@ import com.cliff.util.ConversationResponseBuilder;
 
 public class ReadDialogHandler {
     private static final Logger log = LoggerFactory.getLogger(ReadDialogHandler.class);
+    private static final String SLOT_FILE_OPTION = "fileOption";
+    private static final String SLOT_FROM_OPTION = "fromOption";
+    private static final String SLOT_TO_OPTION = "toOption";
 
 	public static SpeechletResponse readFromFile(SpeechletRequestEnvelope<IntentRequest> requestEnvelope) {
         Intent intent = requestEnvelope.getRequest().getIntent();
@@ -28,7 +31,7 @@ public class ReadDialogHandler {
 
         DialogState dialogueState = requestEnvelope.getRequest().getDialogState();
         
-        log.info("onIntent from cliffConversation dialogueState={}, intentName={}", dialogueState, intentName);
+        log.info("dialogueState={}, intentName={}", dialogueState, intentName);
 
         if (dialogueState.equals(DialogState.STARTED)) {
    	        DialogIntent dialogIntent = new DialogIntent();       
@@ -56,20 +59,19 @@ public class ReadDialogHandler {
         SpeechletResponse speechletResp = new SpeechletResponse();
         speechletResp.setDirectives(directiveList);
         
-        //Only end the session if we have all the info. Assuming we still need to 
-        //get more, we keep the session open.
+        //Only end the session if we have all the info. Assuming we still need to get more, we keep the session open.
         speechletResp.setShouldEndSession(false); 
         
         return speechletResp;
 	}
 	
     private static SpeechletResponse readFromFile(Intent intent) {
-        String fileName = intent.getSlot("fileOption").getValue();
-        Slot fromSlot = intent.getSlot("from");
+        String fileName = intent.getSlot(SLOT_FILE_OPTION).getValue();
+        Slot fromSlot = intent.getSlot(SLOT_FROM_OPTION);
         int from = Integer.valueOf(fromSlot.getValue());
-        Slot toSlot = intent.getSlot("to");
+        Slot toSlot = intent.getSlot(SLOT_TO_OPTION);
         int to = Integer.valueOf(toSlot.getValue());
-    	log.debug("Inside 'readFromFile' with slot values fileName '{}', from '{}', to '{}'", new Object[] {fileName, from, to});
+    	log.debug("About to read file with fileName '{}', from '{}', to '{}'", new Object[] {fileName, from, to});
 
     	String speechText = FlashReader.getFileConents(FlashReader.getFilename(fileName), from, to);
     	return ConversationResponseBuilder.builder().withSsmlText(Optional.of((speechText==null)?"unable to locate the file to read from":speechText)).get();

@@ -16,10 +16,12 @@ import com.amazon.speech.speechlet.interfaces.audioplayer.request.PlaybackFinish
 import com.amazon.speech.speechlet.interfaces.audioplayer.request.PlaybackNearlyFinishedRequest;
 import com.amazon.speech.speechlet.interfaces.audioplayer.request.PlaybackStartedRequest;
 import com.amazon.speech.speechlet.interfaces.audioplayer.request.PlaybackStoppedRequest;
+import com.cliff.countdown.CountdownHandler;
 import com.cliff.flash.FlashMessageHandler;
 import com.cliff.flash.ReadDialogHandler;
 import com.cliff.guest.GuestMessagesHandler;
 import com.cliff.music.PlayMusicMessageHandler;
+import com.cliff.repeat.RepeatDialogHandler;
 
 public class CliffConversationSpeechlet implements AudioPlayer, SpeechletV2{
     private static final String ABOUT_THE_GUEST = "AboutTheGuest";
@@ -27,6 +29,8 @@ public class CliffConversationSpeechlet implements AudioPlayer, SpeechletV2{
     private static final String PLAY_MUSIC = "PlayMusic";
     private static final String READ_FLASH = "ReadFlash";
     private static final String CONVERSE = "Converse";
+    private static final String REPEAT = "Repeat";
+    private static final String COUNTDOWN = "ExamCountdown";
     
     private static final Logger log = LoggerFactory.getLogger(CliffConversationSpeechlet.class);
 
@@ -41,10 +45,16 @@ public class CliffConversationSpeechlet implements AudioPlayer, SpeechletV2{
             return GuestMessagesHandler.aboutTheGuestResponse(intent);
         else if (GUEST_INFO.equals(intentName))
         	return GuestMessagesHandler.getWifiInfo();
+        else if (REPEAT.equals(intentName))
+        	return RepeatDialogHandler.repeat(requestEnvelope);
         else if(READ_FLASH.equals(intentName))
         	return FlashMessageHandler.readFromFile(requestEnvelope);
         else if(CONVERSE.equals(intentName))
         	return ReadDialogHandler.readFromFile(requestEnvelope);
+        else if(COUNTDOWN.equals(intentName)) {
+        	return CountdownHandler.spellOutTheCountdown();
+        }
+        log.debug("Didn't match any intent... '{}'", intentName);
         return null;
 	}
 
@@ -85,6 +95,6 @@ public class CliffConversationSpeechlet implements AudioPlayer, SpeechletV2{
 
 	@Override
 	public void onSessionEnded(SpeechletRequestEnvelope<SessionEndedRequest> requestEnvelope) {
-    	log.debug("inside onSessionEnded ..... error {}", requestEnvelope.getRequest().getError().getMessage());		
+		log.debug("inside onSessionEnded ..... error '{}'", (requestEnvelope.getRequest().getError() != null)?requestEnvelope.getRequest().getError().getMessage():"no reported error");		
 	}
 }

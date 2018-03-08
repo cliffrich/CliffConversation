@@ -9,6 +9,6 @@ public class TestGuestMessage {
    @Test
    public void testSalutationMessage() {
 	  String ret = GuestMessage.aboutTheGuest("sheryl");
-//      assertNotNull(ret);
+      assertNotNull(ret);
    }
 }
